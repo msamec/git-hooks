@@ -1,1 +1,1 @@
-# git-hooks
+# Git hooks

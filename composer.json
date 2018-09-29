@@ -1,0 +1,28 @@
+{
+    "name": "msamec/git-hooks",
+    "license": "MIT",
+    "type": "php-composter-action",
+    "description": "PHP Composter: PHPStan, PHPCsFixer (pre-commit)",
+    "authors": [
+        {
+            "name": "Marko Samec",
+            "email": "marko.schamec@gmail.com"
+        }
+    ],
+    "require": {
+        "friendsofphp/php-cs-fixer": "^2.13",
+        "phpstan/phpstan": "^0.10.3",
+        "php-composter/php-composter": "^0.3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "PhpComposter\\": "src/"
+        }
+    },
+    "extra": {
+        "php-composter-hooks": {
+            "10.pre-commit": "PhpComposter\\PhpStan::preCommit",
+            "20.pre-commit": "PhpComposter\\PhpCsFixer::preCommit"
+        }
+    }
+}
