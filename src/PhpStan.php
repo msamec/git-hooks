@@ -18,8 +18,8 @@ final class PhpStan extends BaseAction
 
     public function preCommit()
     {
+        $this->title(PHP_EOL. 'Starting PHPStan...');
         $files = $this->getStagedFiles('/*.php$', false);
-
         if (empty($files)) {
             return;
         }

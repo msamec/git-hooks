@@ -17,6 +17,7 @@ final class PhpCsFixer extends BaseAction
 
     public function preCommit()
     {
+        $this->title(PHP_EOL. 'Starting PHP CS Fixer...');
         $files = $this->getStagedFiles('/*.php$', false);
 
         if (empty($files)) {
