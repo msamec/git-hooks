@@ -25,7 +25,9 @@ final class PhpStan extends BaseAction
         }
 
         try {
-            $process = new Process([$this->getPhpStanPath(), 'analyze', '--level', 'max', implode(' ', $files)]);
+            $baseCommand = [$this->getPhpStanPath(), 'analyze', '--level', 'max'];
+            $command = array_merge($baseCommand, $files);
+            $process = new Process($command);
             $process->run();
 
             $this->write($process->getOutput());
