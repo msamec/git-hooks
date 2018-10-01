@@ -33,7 +33,8 @@ final class PhpCsFixer extends BaseAction
             $this->write($process->getOutput());
 
             if ($process->isSuccessful()) {
-                $process = new Process($this->gitCall('add .'));
+                $add = array_merge([$this->gitCall('add')], $files);
+                $process = new Process($add);
                 $process->run();
 
                 $this->success('PhpCsFixer successfully applied', false);
