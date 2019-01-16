@@ -33,10 +33,10 @@ final class PhpStan extends BaseAction
             $this->write($process->getOutput());
 
             if ($process->isSuccessful()) {
-                $this->success('PHPStan detected no errors, allowing commit to proceed.', false);
+                $this->success('PHPStan detected no errors.', false);
                 return;
             }
-            $this->error('PHPStan detected errors, aborting commit!', self::EXIT_ERRORS_FOUND);
+            $this->write('PHPStan detected errors!');
         } catch (Exception $e) {
             $this->error('An error occurred trying to run PHPStan: ' . PHP_EOL . $e->getMessage(), self::EXIT_WITH_EXCEPTIONS);
         }
