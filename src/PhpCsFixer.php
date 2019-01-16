@@ -25,7 +25,7 @@ final class PhpCsFixer extends BaseAction
         }
 
         try {
-            $baseCommand = [$this->getPhpCsFixerPath(), 'fix', '--config=.php_cs.dist', '--using-cache=no', '--dry-run', '--diff'];
+            $baseCommand = [$this->getPhpCsFixerPath(), 'fix', '--config=.php_cs.dist', '--using-cache=no', '--dry-run', '--diff', '--diff-format=udiff'];
             $command = array_merge($baseCommand, $files);
             $process = new Process($command);
             $process->run();
