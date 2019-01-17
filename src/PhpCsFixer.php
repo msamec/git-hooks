@@ -33,14 +33,8 @@ final class PhpCsFixer extends BaseAction
             $this->write($process->getOutput());
 
             if ($process->isSuccessful()) {
-                $add = array_merge(['git', 'add'], $files);
-                $process = new Process($add);
-                $process->run();
-
-                if($process->isSuccessful()) {
-                    $this->success('PhpCsFixer successfully passed', false);
-                    return;
-                }
+                $this->success('PhpCsFixer successfully passed', false);
+                return;
             }
             $this->write('PhpCsFixer detected errors!');
         } catch (Exception $e) {
