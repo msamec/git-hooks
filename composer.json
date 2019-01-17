@@ -10,6 +10,7 @@
         }
     ],
     "require": {
+        "php": "^7.1",
         "friendsofphp/php-cs-fixer": "^2.13",
         "phpstan/phpstan": "^0.10.3",
         "php-composter/php-composter": "^0.3.3"
