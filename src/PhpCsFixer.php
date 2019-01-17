@@ -38,11 +38,11 @@ final class PhpCsFixer extends BaseAction
                 $process->run();
 
                 if($process->isSuccessful()) {
-                    $this->success('PhpCsFixer successfully applied', false);
+                    $this->success('PhpCsFixer successfully passwed', false);
                     return;
                 }
             }
-            $this->write('PhpCsFixer detected errors, aborting commit!');
+            $this->write('PhpCsFixer detected errors!');
         } catch (Exception $e) {
             $this->error('An error occurred trying to run PhpCsFixer: ' . PHP_EOL . $e->getMessage(), self::EXIT_WITH_EXCEPTIONS);
         }
