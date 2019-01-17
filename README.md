@@ -1,8 +1,8 @@
 # Git hooks
-##Installation
+## Installation
 * ```composer require --dev msamec/git-hooks```
 * create ```.php_cs.dist``` inside root of your project
-##Documentation
+## Documentation
 This package will create git hooks that will trigger on git commit.
 At the moment two tools are running [PHPStan](https://github.com/phpstan/phpstan) and [PHP CS FIXER](https://github.com/FriendsOfPHP/PHP-CS-Fixer).
 
