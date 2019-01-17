@@ -38,7 +38,7 @@ final class PhpCsFixer extends BaseAction
                 $process->run();
 
                 if($process->isSuccessful()) {
-                    $this->success('PhpCsFixer successfully passwed', false);
+                    $this->success('PhpCsFixer successfully password', false);
                     return;
                 }
             }
