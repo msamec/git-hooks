@@ -42,7 +42,7 @@ final class PhpCsFixer extends BaseAction
                     return;
                 }
             }
-            $this->error('PhpCsFixer detected errors, aborting commit!', self::EXIT_ERRORS_FOUND);
+            $this->write('PhpCsFixer detected errors, aborting commit!');
         } catch (Exception $e) {
             $this->error('An error occurred trying to run PhpCsFixer: ' . PHP_EOL . $e->getMessage(), self::EXIT_WITH_EXCEPTIONS);
         }
