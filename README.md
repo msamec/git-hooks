@@ -1,4 +1,6 @@
 # Git hooks
+## Requirements
+* PHP >= 7.1
 ## Installation
 * ```composer require --dev msamec/git-hooks```
 * create ```.php_cs.dist``` inside root of your project
