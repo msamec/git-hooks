@@ -16,7 +16,7 @@ final class PhpStan extends BaseAction
 
     public const EXIT_WITH_EXCEPTIONS = 2;
 
-    public function postCommit(): void
+    public function preCommit(): void
     {
         $this->title(PHP_EOL. 'Starting PHPStan...');
         $files = $this->getStagedFiles('/*.php$', false);

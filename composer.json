@@ -22,8 +22,8 @@
     },
     "extra": {
         "php-composter-hooks": {
-            "10.post-commit": "PhpComposter\\PhpStan::postCommit",
-            "20.post-commit": "PhpComposter\\PhpCsFixer::postCommit"
+            "10.pre-commit": "PhpComposter\\PhpStan::preCommit",
+            "20.pre-commit": "PhpComposter\\PhpCsFixer::preCommit"
         }
     }
 }
