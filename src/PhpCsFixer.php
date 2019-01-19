@@ -12,10 +12,10 @@ use Symfony\Component\Process\Process;
  */
 final class PhpCsFixer extends BaseAction
 {
-    const EXIT_ERRORS_FOUND = 1;
-    const EXIT_WITH_EXCEPTIONS = 2;
+    public const EXIT_ERRORS_FOUND = 1;
+    public const EXIT_WITH_EXCEPTIONS = 2;
 
-    public function preCommit()
+    public function postCommit(): void
     {
         $this->title(PHP_EOL. 'Starting PHP CS Fixer...');
         $files = $this->getStagedFiles('/*.php$', false);
@@ -48,7 +48,7 @@ final class PhpCsFixer extends BaseAction
     /**
      * @return string
      */
-    private function getPhpCsFixerPath()
+    private function getPhpCsFixerPath(): string
     {
         return 'vendor/bin/php-cs-fixer';
     }

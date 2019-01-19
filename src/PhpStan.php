@@ -12,11 +12,11 @@ use Symfony\Component\Process\Process;
  */
 final class PhpStan extends BaseAction
 {
-    const EXIT_ERRORS_FOUND = 1;
+    public const EXIT_ERRORS_FOUND = 1;
 
-    const EXIT_WITH_EXCEPTIONS = 2;
+    public const EXIT_WITH_EXCEPTIONS = 2;
 
-    public function preCommit()
+    public function postCommit(): void
     {
         $this->title(PHP_EOL. 'Starting PHPStan...');
         $files = $this->getStagedFiles('/*.php$', false);
@@ -47,7 +47,7 @@ final class PhpStan extends BaseAction
     /**
      * @return string
      */
-    private function getPhpStanPath()
+    private function getPhpStanPath(): string
     {
         return 'vendor/bin/phpstan';
     }
